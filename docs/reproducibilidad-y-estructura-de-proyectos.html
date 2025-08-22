@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Reproducibilidad y Estructura de Proyectos | Colombia Country Study - RA Manual</title>
+  <meta name="description" content="Este será el manual guía de programación para el Country Study de Colombia" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Reproducibilidad y Estructura de Proyectos | Colombia Country Study - RA Manual" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este será el manual guía de programación para el Country Study de Colombia" />
+  <meta name="github-repo" content="ignaciomsarmiento/RA_Manual_CCS/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Reproducibilidad y Estructura de Proyectos | Colombia Country Study - RA Manual" />
+  
+  <meta name="twitter:description" content="Este será el manual guía de programación para el Country Study de Colombia" />
+  
+
+<meta name="author" content="Ignacio Sarmiento Barbieri" />
+
+
+<meta name="date" content="2025-08-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a></li>
+<li class="chapter" data-level="2" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html"><i class="fa fa-check"></i><b>2</b> Reproducibilidad y Estructura de Proyectos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#flujos-de-trabajo-reproducibles"><i class="fa fa-check"></i><b>2.1</b> Flujos de Trabajo Reproducibles</a></li>
+<li class="chapter" data-level="2.2" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#estructura-de-proyectos"><i class="fa fa-check"></i><b>2.2</b> Estructura de Proyectos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="01-reproducibilidad.html"><a href="#creando-la-estructura-de-proyecto-autom%C3%A1ticamente"><i class="fa fa-check"></i><b>2.2.1</b> Creando la estructura de proyecto automáticamente</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="01-reproducibilidad.html"><a href="#gesti%C3%B3n-de-rutas-en-los-directorios-de-trabajo"><i class="fa fa-check"></i><b>2.3</b> Gestión de Rutas en los Directorios de Trabajo</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#proyectos-en-rstudio"><i class="fa fa-check"></i><b>2.3.1</b> Proyectos en RStudio</a></li>
+<li class="chapter" data-level="2.3.2" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#rutas-de-archivos-y-el-paquete-here"><i class="fa fa-check"></i><b>2.3.2</b> Rutas de Archivos y el Paquete {here}</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#nombrar-archivos"><i class="fa fa-check"></i><b>2.4</b> Nombrar archivos</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#nombres-de-archivos-legibles-por-computadora"><i class="fa fa-check"></i><b>2.4.1</b> Nombres de archivos legibles por computadora</a></li>
+<li class="chapter" data-level="2.4.2" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#nombres-de-archivos-legibles-por-humanos"><i class="fa fa-check"></i><b>2.4.2</b> Nombres de archivos legibles por humanos</a></li>
+<li class="chapter" data-level="2.4.3" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#nombres-de-archivos-que-funcionan-bien-con-el-orden-predeterminado"><i class="fa fa-check"></i><b>2.4.3</b> Nombres de archivos que funcionan bien con el orden predeterminado</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="01-reproducibilidad.html"><a href="#buenas-pr%C3%A1cticas-para-escribir-c%C3%B3digo"><i class="fa fa-check"></i><b>2.5</b> Buenas prácticas para escribir código</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="01-reproducibilidad.html"><a href="#mant%C3%A9n-el-c%C3%B3digo-modular"><i class="fa fa-check"></i><b>2.5.1</b> Mantén el código modular</a></li>
+<li class="chapter" data-level="2.5.2" data-path="01-reproducibilidad.html"><a href="#mant%C3%A9n-el-c%C3%B3digo-corto-y-con-prop%C3%B3sito"><i class="fa fa-check"></i><b>2.5.2</b> Mantén el código corto y con propósito</a></li>
+<li class="chapter" data-level="2.5.3" data-path="01-reproducibilidad.html"><a href="#haz-que-tus-funciones-sean-t%C3%ADmidas"><i class="fa fa-check"></i><b>2.5.3</b> Haz que tus funciones sean tímidas</a></li>
+<li class="chapter" data-level="2.5.4" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#ordena-tus-funciones-para-una-lectura-lineal"><i class="fa fa-check"></i><b>2.5.4</b> Ordena tus funciones para una lectura lineal</a></li>
+<li class="chapter" data-level="2.5.5" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#usa-nombres-descriptivos"><i class="fa fa-check"></i><b>2.5.5</b> Usa nombres descriptivos</a></li>
+<li class="chapter" data-level="2.5.6" data-path="01-reproducibilidad.html"><a href="#s%C3%A9-consistente"><i class="fa fa-check"></i><b>2.5.6</b> Sé consistente</a></li>
+<li class="chapter" data-level="2.5.7" data-path="01-reproducibilidad.html"><a href="#comenta-el-c%C3%B3digo"><i class="fa fa-check"></i><b>2.5.7</b> Comenta el código</a></li>
+<li class="chapter" data-level="2.5.8" data-path="01-reproducibilidad.html"><a href="#indenta-el-c%C3%B3digo"><i class="fa fa-check"></i><b>2.5.8</b> Indenta el código</a></li>
+<li class="chapter" data-level="2.5.9" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#no-dejes-desorden"><i class="fa fa-check"></i><b>2.5.9</b> No dejes desorden</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="01-reproducibilidad.html"><a href="#gesti%C3%B3n-de-paquetes-estad%C3%ADsticos"><i class="fa fa-check"></i><b>2.6</b> Gestión de Paquetes Estadísticos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="reproducibilidad-y-estructura-de-proyectos.html"><a href="reproducibilidad-y-estructura-de-proyectos.html#palabras-finales"><i class="fa fa-check"></i><b>2.6.1</b> Palabras finales</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Colombia Country Study - RA Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="reproducibilidad-y-estructura-de-proyectos" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number"> 2</span> Reproducibilidad y Estructura de Proyectos<a href="reproducibilidad-y-estructura-de-proyectos.html#reproducibilidad-y-estructura-de-proyectos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>La investigación se fortalece si sus resultados pueden ser replicados y confirmados por varios investigadores independientes. Cuando los investigadores emplean transparencia en su investigación, es decir, cuando documentan y comparten adecuadamente los datos y procesos asociados con sus análisis, la comunidad investigadora en general puede ahorrar tiempo valioso al reproducir o basarse en los resultados publicados. A menudo, los datos o el código de proyectos anteriores son reutilizados por nuevos investigadores para verificar hallazgos anteriores o desarrollar nuevos análisis.</p>
+<p>En este libro vamos a definir como investigación reproducible como el trabajo que puede ser recreado de manera independiente a partir de los mismos datos y el mismo código original. Replicabilidad por otro lado, es aplicar el mismo análisis a datos diferentes. La reproducibilidad es distinta de la replicabilidad. Es decir, un trabajo reproducible es aquel en el que los resultados se mantienen idénticos si los códigos o los datos no han cambiado.</p>
+<div id="fig:repro_repli" class="section level5 unnumbered hasAnchor">
+<h5>Reproducibilidad versus Replicabilidad<a href="reproducibilidad-y-estructura-de-proyectos.html#fig:repro_repli" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><img src="figs/reproducible-definition-grid.jpg" /></p>
+<p><em>Nota: Esta figura fue tomada de</em> <span class="citation">Arnold et al. (<a href="#ref-TheTuringWay">2019</a>)</span></p>
+</div>
+<div id="flujos-de-trabajo-reproducibles" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Flujos de Trabajo Reproducibles<a href="reproducibilidad-y-estructura-de-proyectos.html#flujos-de-trabajo-reproducibles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
+<p><b> Reglas a recordar </b></p>
+<ul>
+<li>Escribe siempre código</li>
+<li>Automatiza todo lo que se puedas automatizar.</li>
+<li>Escribe un único script que ejecute todo el código de principio a fin.</li>
+</ul>
+</div>
+<p>El trabajo con datos a menudo requiere miles o decenas de miles de líneas de código. Por lo tanto, para trabajar de manera transparente, debemos adoptar tanto las técnicas estadísticas y metodológicas reproducibles, como las prácticas de flujo de trabajo y software que hagan que nuestro trabajo sea fácilmente reproducible por otros.</p>
+<p>Al diseñar flujos de trabajo reproducibles y compartirlos con los diferentes componentes de nuestro proyecto de investigación, permitimos que otros desarrollen una comprensión profunda de nuestro trabajo. Esto permite revisar nuestros métodos, probar nuestro código, proponer cambios útiles y hacer contribuciones para desarrollar aún más nuestro proyecto. Los flujos de trabajo reproducibles facilitan enormemente el proceso de revisión por pares al permitir a los revisores el acceso a las diferentes partes de los proyectos necesarias para validar los resultados de la investigación.</p>
+<p>El objetivo de este capítulo es introducir las prácticas más importantes en este ámbito. Hay varias herramientas que los investigadores pueden utilizar para asegurarse de que su trabajo sea reproducible. A continuación, discutimos las prácticas de flujo de trabajo. Al usar estas herramientas, un investigador se acercará al ideal de reproducibilidad de <em>“flujo de trabajo de un solo clic”</em>, es decir, ser capaces de ejecutar todo el análisis desde cero con un solo clic .</p>
+<p>El código es solo un aspecto de una estructura más amplia que denominamos “flujo de trabajo”, que abarca la combinación de datos, código, organización y documentación. Todo, desde los nombres de archivos y variables hasta la organización de carpetas, el almacenamiento de datos y la programación eficiente y legible, forma parte del flujo de trabajo.</p>
+<div id="fig:repro_journey" class="section level5 unnumbered">
+<h5 class="unnumbered"></h5>
+<p><img src="figs/ReproducibleJourney.jpg" /></p>
+<p><em>Nota: Esta figura fue tomada de</em> <span class="citation">Arnold et al. (<a href="#ref-TheTuringWay">2019</a>)</span></p>
+<p>Antes de ofrecer detalles específicos sobre cómo escribir código reproducible, es importante mencionar una regla fundamental: <strong>Escribe siempre código!!</strong>. Escribe código en lugar de trabajar manualmente en tu entorno de programación estadística preferido. Esto significa:</p>
+<ol style="list-style-type: decimal">
+<li>No modificar datos manualmente, como con una hoja de cálculo. Es decir, evita usar Excel si es posible.</li>
+<li>No confiar en la línea de comandos, menús desplegables, u opciones de apuntar y hacer clic en software estadístico (como SPSS o Stata).</li>
+<li>En su lugar, haz absolutamente todo con scripts.</li>
+</ol>
+<p>La razón principal para esto es la reproducibilidad. Modificar datos en Excel o cualquier programa similar de hojas de cálculo no deja un registro de los cambios realizados ni una explicación del razonamiento o el momento detrás de cualquier modificación. Aunque pueda parecer fácil o rápido limpiar datos una sola vez en Excel, o hacer cambios “menores” para que los datos sean legibles por el software estadístico preferido del investigador, a menos que estos cambios se escriban en detalle minucioso, este enfoque simplemente no es reproducible por otros investigadores. Es mejor escribir un script de programación que importe los datos sin procesar, haga todos los cambios necesarios, con comentarios en el código que expliquen esos cambios, y guarde cualquier conjunto de datos intermedios utilizado en el análisis. Luego, un investigador puede compartir sus datos originales y el código, y otros investigadores pueden reproducir su trabajo exactamente. No olvides que ese otro investigador podrías ser tú en unos meses.</p>
+<p>Aunque entendemos que una buena cantidad de investigación se ha realizado usando menús desplegables en SPSS o Stata, desaconsejamos enfáticamente esta práctica. Como mínimo, si insistes en seguir esta ruta, utiliza las funciones de registro de comandos integradas en el software. En Stata, esto implica el comando <code>cmdlog</code>; en SPSS, implica usar el botón de pegar para agregar a un archivo de sintaxis. Al menos en ese caso, otros pueden ver los comandos que ejecutaste, incluso si no pueden reproducirlos fácilmente.</p>
+<p>El ideal de transparencia en la investigación es hacer todo, incluyendo cambios como redondeos y formateo, mediante scripts. Incluso la descarga de datos desde sitios web se puede hacer a través de un script. Por ejemplo, en <code>R</code>, la función <code>download.file()</code> se puede usar para guardar datos de un sitio web. En Stata, el comando <code>copy</code> hace lo mismo. Por supuesto, esto abre la posibilidad de que el archivo de datos cambie en línea.</p>
+<p>Finalmente, aquí hay dos principios generales de organización:</p>
+<ol style="list-style-type: decimal">
+<li>Considera no guardar la salida estadística, sino solo guardar el código y los datos que la generan. Obviamente, esto sería irrealistamente tedioso para proyectos grandes (especialmente aquellos donde el análisis tarda días en ejecutarse), pero la idea es que deberías poder reproducir todos los pasos de tu análisis desde cero en cualquier momento.</li>
+<li>Siempre comenta el código, cuanto más comentes tu código, y cuanto más describas el contenido de cada archivo de script, mejor serán la posibilidades de reproducción.</li>
+</ol>
+</div>
+</div>
+<div id="estructura-de-proyectos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Estructura de Proyectos<a href="reproducibilidad-y-estructura-de-proyectos.html#estructura-de-proyectos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un punto de partida natural para describir un buen flujo de trabajo es detallar una estructura básica de carpetas en el computador, nuestra sugerencia inspirada en <span class="citation">Gentzkow and Shapiro (<a href="#ref-gentzkow2014code">2014</a>)</span> es la siguiente:</p>
+<pre><code>Complex Project Folder Estructure/
+├── 01_build                    &lt;- construcción de los datos
+│   └── 01_input/
+│       └── my_data.csv
+│   └── 02_scripts/
+│       └── clean_data.R
+│   └── 03_output/
+│       └── data_clean.csv
+│   └── 04_temp/
+│       └── temp_merge.csv
+├── 02_analysis                &lt;- análisis de los datos
+│   └── 01_input/
+│       └── data_clean.csv
+│   └── 02_scripts/
+│       └── 01_regressions_table1.R
+│       └── 02_regressions_fig1.R
+│   └── 03_output/
+│       └── 01_fig1.png
+│       └── 02_table1.tex
+│   └── 04_temp/
+│       └── regressions.log
+└── 03_Document                 &lt;- Document
+    └── Document.Rmd         &lt;- script documento dinámico
+   </code></pre>
+<p>Por supuesto, los detalles variarán para diferentes tipos de investigación y los gustos de diferentes académicos, pero muchos proyectos pueden tener una estructura de archivos similar a la organización básica mostrada aquí. En primer lugar, necesita crear una carpeta maestra con un nombre corto pero descriptivo para el proyecto, un nombre que sea significativo tanto para usted como para sus colaboradores.</p>
+<div id="creando-la-estructura-de-proyecto-automáticamente" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Creando la estructura de proyecto automáticamente<a href="#creando-la-estructura-de-proyecto-autom%C3%A1ticamente" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una opción para la creación de esta estructura es simplemente tener un script que lo hace por nosotros. Para ello utilizaremos un <code>script</code> en <code>Bash</code> que crea la estructura de carpetas descriptas anteriormente.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb2-2"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-3" tabindex="-1"></a><span class="co"># Crear directorios de nivel superior</span></span>
+<span id="cb2-4"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-4" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> 01_build 02_analysis 03_document</span>
+<span id="cb2-5"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-6" tabindex="-1"></a><span class="co"># Crear subdirectorios dentro de build y analysis</span></span>
+<span id="cb2-7"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-7" tabindex="-1"></a><span class="cf">for</span> dir <span class="kw">in</span> 01_build 02_analysis</span>
+<span id="cb2-8"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-8" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb2-9"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-9" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/01_input</span>
+<span id="cb2-10"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-10" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/02_scripts</span>
+<span id="cb2-11"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-11" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/03_output</span>
+<span id="cb2-12"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-12" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/04_temp</span>
+<span id="cb2-13"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-13" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb2-14"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-15" tabindex="-1"></a><span class="co"># Navegar al directorio 02_analysis/03_output y crear subdirectorios</span></span>
+<span id="cb2-16"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-16" tabindex="-1"></a><span class="bu">cd</span> 02_analysis/03_output</span>
+<span id="cb2-17"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-17" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> Figures Tables</span>
+<span id="cb2-18"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-18" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-19" tabindex="-1"></a><span class="co"># Volver al directorio principal</span></span>
+<span id="cb2-20"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-20" tabindex="-1"></a><span class="bu">cd</span> ../..</span>
+<span id="cb2-21"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-21" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-22" tabindex="-1"></a><span class="co"># Crear un archivo README.txt en blanco</span></span>
+<span id="cb2-23"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-23" tabindex="-1"></a><span class="fu">touch</span> README.txt</span>
+<span id="cb2-24"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-24" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb2-25" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;¡Carpetas creadas exitosamente!&quot;</span></span></code></pre></div>
+<p>El script realiza 5 operaciones</p>
+<ol style="list-style-type: decimal">
+<li><strong>Shebang (<code>#!/bin/bash</code>)</strong>: Indica que el script debe ejecutarse con Bash.</li>
+<li><strong>Creación de directorios de nivel superior</strong>: <code>mkdir -p 01_build 02_analysis 03_document</code> crea tres carpetas principales: <code>01_build</code>, <code>02_analysis</code>, y <code>03_document</code>.</li>
+<li><strong>Creación de subdirectorios</strong>: Un bucle <code>for</code> recorre los directorios <code>01_build</code> y <code>02_analysis</code>, creando cuatro subcarpetas dentro de cada uno: <code>01_input</code>, <code>02_scripts</code>, <code>03_output</code>, y <code>04_temp</code>.</li>
+<li><strong>Navegar y crear más subdirectorios</strong>: El script navega a <code>02_analysis/03_output</code> y crea dos subcarpetas más: <code>Figures</code> y <code>Tables</code>.</li>
+<li><em>Creación de un archivo README.txt</em>: El script regresa al directorio principal y crea un archivo en blanco llamado <code>README.txt</code></li>
+<li><strong>Mensaje de confirmación</strong>: <code>echo "¡Carpetas creadas exitosamente!"</code> imprime un mensaje indicando que el proceso se ha completado.</li>
+</ol>
+<p>Alternativamente, tambien puedes incluir texto en tu archivo de README.txt</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb3-2"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-3" tabindex="-1"></a><span class="co"># Crear directorios de nivel superior</span></span>
+<span id="cb3-4"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-4" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> 01_build 02_analysis 03_document</span>
+<span id="cb3-5"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-6" tabindex="-1"></a><span class="co"># Crear subdirectorios dentro de build y analysis</span></span>
+<span id="cb3-7"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-7" tabindex="-1"></a><span class="cf">for</span> dir <span class="kw">in</span> 01_build 02_analysis</span>
+<span id="cb3-8"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-8" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb3-9"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-9" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/01_input</span>
+<span id="cb3-10"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-10" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/02_scripts</span>
+<span id="cb3-11"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-11" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/03_output</span>
+<span id="cb3-12"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-12" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> ./<span class="va">$dir</span>/04_temp</span>
+<span id="cb3-13"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-13" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb3-14"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-15" tabindex="-1"></a><span class="co"># Navegar al directorio 02_analysis/03_output y crear subdirectorios</span></span>
+<span id="cb3-16"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-16" tabindex="-1"></a><span class="bu">cd</span> 02_analysis/03_output</span>
+<span id="cb3-17"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-17" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> Figures Tables</span>
+<span id="cb3-18"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-18" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-19" tabindex="-1"></a><span class="co"># Volver al directorio principal</span></span>
+<span id="cb3-20"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-20" tabindex="-1"></a><span class="bu">cd</span> ../..</span>
+<span id="cb3-21"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-21" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-22" tabindex="-1"></a><span class="co"># Crear el archivo README.txt con la estructura de carpetas y la descripción</span></span>
+<span id="cb3-23"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-23" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&lt;&lt;EOL</span> <span class="op">&gt;</span> README.txt</span>
+<span id="cb3-24"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-24" tabindex="-1"></a><span class="st">Estructura de Carpetas:</span></span>
+<span id="cb3-25"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-25" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-26" tabindex="-1"></a><span class="st">01_build</span></span>
+<span id="cb3-27"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-27" tabindex="-1"></a><span class="st">├── 01_input</span></span>
+<span id="cb3-28"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-28" tabindex="-1"></a><span class="st">├── 02_scripts</span></span>
+<span id="cb3-29"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-29" tabindex="-1"></a><span class="st">├── 03_output</span></span>
+<span id="cb3-30"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-30" tabindex="-1"></a><span class="st">└── 04_temp</span></span>
+<span id="cb3-31"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-31" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-32" tabindex="-1"></a><span class="st">02_analysis</span></span>
+<span id="cb3-33"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-33" tabindex="-1"></a><span class="st">├── 01_input</span></span>
+<span id="cb3-34"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-34" tabindex="-1"></a><span class="st">├── 02_scripts</span></span>
+<span id="cb3-35"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-35" tabindex="-1"></a><span class="st">├── 03_output</span></span>
+<span id="cb3-36"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-36" tabindex="-1"></a><span class="st">│   ├── Figures</span></span>
+<span id="cb3-37"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-37" tabindex="-1"></a><span class="st">│   └── Tables</span></span>
+<span id="cb3-38"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-38" tabindex="-1"></a><span class="st">└── 04_temp</span></span>
+<span id="cb3-39"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-39" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-40" tabindex="-1"></a><span class="st">03_document</span></span>
+<span id="cb3-41"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-41" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-42" tabindex="-1"></a><span class="st">Descripción de Carpetas:</span></span>
+<span id="cb3-43"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-43" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-44" tabindex="-1"></a><span class="st">01_build:</span></span>
+<span id="cb3-45"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-45" tabindex="-1"></a><span class="st">  - 01_input: Contiene archivos de entrada para el proceso de construcción.</span></span>
+<span id="cb3-46"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-46" tabindex="-1"></a><span class="st">  - 02_scripts: Contiene scripts utilizados para el proceso de construcción.</span></span>
+<span id="cb3-47"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-47" tabindex="-1"></a><span class="st">  - 03_output: Contiene los resultados del proceso de construcción.</span></span>
+<span id="cb3-48"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-48" tabindex="-1"></a><span class="st">  - 04_temp: Contiene archivos temporales generados durante el proceso de construcción.</span></span>
+<span id="cb3-49"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-49" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-50" tabindex="-1"></a><span class="st">02_analysis:</span></span>
+<span id="cb3-51"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-51" tabindex="-1"></a><span class="st">  - 01_input: Contiene archivos de entrada para el análisis.</span></span>
+<span id="cb3-52"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-52" tabindex="-1"></a><span class="st">  - 02_scripts: Contiene scripts utilizados para el análisis.</span></span>
+<span id="cb3-53"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-53" tabindex="-1"></a><span class="st">  - 03_output: Contiene los resultados del análisis.</span></span>
+<span id="cb3-54"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-54" tabindex="-1"></a><span class="st">    - Figures: Contiene figuras generadas por el análisis.</span></span>
+<span id="cb3-55"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-55" tabindex="-1"></a><span class="st">    - Tables: Contiene tablas generadas por el análisis.</span></span>
+<span id="cb3-56"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-56" tabindex="-1"></a><span class="st">  - 04_temp: Contiene archivos temporales generados durante el análisis.</span></span>
+<span id="cb3-57"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-57" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-58" tabindex="-1"></a><span class="st">03_document:</span></span>
+<span id="cb3-59"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-59" tabindex="-1"></a><span class="st">  - Contiene documentos relacionados con el proyecto.</span></span>
+<span id="cb3-60"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-60" tabindex="-1"></a><span class="op">EOL</span></span>
+<span id="cb3-61"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-61" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb3-62" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;¡Carpetas y README.txt creados exitosamente!&quot;</span></span></code></pre></div>
+<div id="cómo-ejecutar-el-script-en-windows" class="section level4 hasAnchor" number="2.2.1.1">
+<h4><span class="header-section-number">2.2.1.1</span> Cómo Ejecutar el Script en Windows<a href="#c%C3%B3mo-ejecutar-el-script-en-windows" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sí, puedes usar GitHub Desktop para instalar Git Bash y ejecutar scripts de Bash en Windows. Aquí están las instrucciones detalladas:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Paso 1</strong>: Instalar <strong>GitHub Desktop</strong>. Para descargar e Instalar GitHub Desktop ve a <a href="https://desktop.github.com">desktop.github.com</a> y descarga GitHub Desktop y sigue las instrucciones de instalación. Asegurarse que <a href="https://www.git-scm.com/">Git</a> haya sido instalado, de caso contrario crearlo.</p></li>
+<li><p><strong>Paso 2</strong>: Crear y guardar el Script. Para ello primero abre Notepad o cualquier editor de texto y luego copia el <code>script</code> anterior en el editor. Finalmente, guarda el archivo con la extensión <code>.sh</code>, por ejemplo, <code>create_folders.sh</code>.</p></li>
+<li><p><strong>Paso 3</strong>: Ejecutar el Script Usando Git Bash:</p>
+<p>3.1. Abre GitHub Desktop y crea un repositorio. En el explorador de Windows, busca la carpeta del repositorio.</p>
+<p>3.2 Haz click derecho con el mouse para abrir Git Bash.</p>
+<p>3.3. Una vez en la terminal ejecuta el archivo hacieno <code>sh create_folders.sh</code></p></li>
+</ol>
+<p><em>Porque usamos Git Bash y no la terminal de windows? Preferimos Git Bash porque es una herramienta que proporciona un entorno similar a UNIX/Linux en Windows, ideal para desarrolladores que necesitan usar comandos de Git y scripts de Bash. Emula una terminal Bash con comandos y utilidades típicas de UNIX, lo que facilita la compatibilidad con herramientas y flujos de trabajo de desarrollo de sistemas basados en UNIX. Por otro lado, la terminal de Windows (Command Prompt) es el intérprete de comandos predeterminado en Windows, diseñado para ejecutar comandos nativos de Windows y scripts batch, siendo más adecuada para tareas administrativas y operaciones específicas del sistema operativo Windows.</em></p>
+</div>
+<div id="cómo-ejecutar-el-script-en-mac" class="section level4 hasAnchor" number="2.2.1.2">
+<h4><span class="header-section-number">2.2.1.2</span> Cómo Ejecutar el Script en Mac<a href="#c%C3%B3mo-ejecutar-el-script-en-mac" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Paso 1</strong>: Crear y guardar el Script. Abre un editor de texto, copia el <code>script</code> y guárdalo con la extensión <code>.sh</code>, por ejemplo, <code>create_folders.sh</code>.</p></li>
+<li><p><strong>Paso 2</strong>: Abrir la Terminal. Ve a <code>Aplicaciones</code> &gt; <code>Utilidades</code> &gt; <code>Terminal</code>.</p></li>
+<li><p><strong>Paso 3</strong>: Navegar al Directorio del Script:</p>
+<p>3.1. Usa el comando <code>cd</code> para ir al directorio donde guardaste el script. Por ejemplo: <code>cd /Users/TuUsuario/PathToScript</code></p>
+<p>3.2. Haz el script ejecutable, para ello ejecuta: <code>chmod +x create_folders.sh</code></p>
+<p>3.3. Finalmente, ejecuta el script haciendo <code>./create_folders.sh</code> y las carpetas quedarán creadas en tu directorio.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="gestión-de-rutas-en-los-directorios-de-trabajo" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Gestión de Rutas en los Directorios de Trabajo<a href="#gesti%C3%B3n-de-rutas-en-los-directorios-de-trabajo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Muchos entornos de programación tienen un concepto poderoso de la “ruta de trabajo” o “directorio de trabajo”. Este es el lugar donde el software busca los archivos que le pides que cargue y donde guardará cualquier archivo que le pidas que guarde. Por ejemplo, en algunos entornos, la ruta de trabajo actual se muestra en la parte superior de la consola o ventana principal del software.</p>
+<p>Es importante siempre usar rutas de directorios relativas (como <code>./Data</code> y no <code>C:/Usuarios/Ignacio/Documentos/Proyecto/Datos</code>) para que los usuarios en otras computadoras no tengan que renombrar cada referencia a un archivo y puedan en su lugar solo cambiar o asignar un directorio global una vez.</p>
+<p>En <code>R</code> puedes ver tu ruta completa ejecutando <code>getwd()</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb4-1" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb4-2"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb4-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;/Usuarios/Ignacio/Documentos/Proyecto/Datos&quot;</span></span></code></pre></div>
+<p>En esta sesión de <code>R</code>, el directorio de trabajo actual (piénsalo como “inicio”) está en la carpeta Documentos de Ignacio, en una subcarpeta llamada Datos Este código devolverá un resultado diferente cuando lo ejecutes, porque la estructura de directorios de tu computadora es diferente a la de Ignacio.</p>
+<p>Puedes establecer el directorio de trabajo desde <code>R</code>, pero <strong>NO</strong> lo recomendamos:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb5-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/ruta/a/mi/ProyectoGenial&quot;</span>)</span></code></pre></div>
+<p>Establecer el directorio de trabajo usando <code>setwd()</code> puede parecer una solución sencilla, pero presenta varias desventajas importantes. Primero, afecta la reproducibilidad y la colaboración, ya que configura un directorio de trabajo específico que es local a tu máquina, lo que puede causar problemas cuando otros intenten ejecutar tu script en sus propias computadoras, debido a las diferentes estructuras de directorios. Usar rutas relativas, en cambio, asegura que el código sea más portátil y fácil de compartir.</p>
+<p>Además, herramientas como RStudio permiten crear proyectos que automáticamente establecen el directorio de trabajo al directorio del proyecto, eliminando la necesidad de <code>setwd()</code> y facilitando la organización y gestión del proyecto. Mantener el código libre de <code>setwd()</code> fomenta mejores prácticas de organización y reduce la probabilidad de conflictos, ya que establecer manualmente el directorio de trabajo puede llevar a errores difíciles de depurar, especialmente si se ejecutan múltiples <code>scripts</code> o se trabaja en diferentes proyectos simultáneamente.</p>
+<p>Finalmente, en flujos de trabajo automatizados o en entornos de producción, depender de <code>setwd()</code> puede ser problemático. Es preferible tener <code>scripts</code> que sean independientes de la configuración del directorio de trabajo y que funcionen correctamente sin necesidad de ajustes manuales. En resumen, evitar el uso de <code>setwd()</code> y utilizar rutas relativas mejora la reproducibilidad, facilita la colaboración y se alinea con las mejores prácticas de programación.</p>
+<p>Hay una mejor manera; una forma que también te pone en el camino para gestionar tu trabajo en R como un experto. Esa manera es el proyecto de RStudio.</p>
+<div id="proyectos-en-rstudio" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Proyectos en RStudio<a href="reproducibilidad-y-estructura-de-proyectos.html#proyectos-en-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mantener todos los archivos asociados con un proyecto (datos de entrada, scripts de R, resultados analíticos y figuras) juntos en un directorio es una práctica tan común como sabia que <code>RStudio</code> ha incorporado esto a través de <strong>proyectos</strong>. Para crear un proyecto hay que hacer clic en <code>Archivo &gt; Nuevo Proyecto</code> y seguir los pasos mostrados en la siguiente figura.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-new-project"></span>
+<img src="figs/new-project.png" alt="Three screenshots of the New Project menu. In the first screenshot, 
+the Create Project window is shown and New Directory is selected. 
+In the second screenshot, the Project Type window is shown and 
+Empty Project is selected. In the third screenshot, the Create New
+Project  window is shown and the directory name is given as r4ds and
+the project is being created as subdirectory of the Desktop.
+"  />
+<p class="caption">
+Figure 2.1: To create new project: (top) first click New Directory, then (middle)
+click New Project, then (bottom) fill in the directory (project) name,
+choose a good subdirectory for its home and click Create Project.
+</p>
+</div>
+<p><em>Nota: Esta figura fue tomada de</em> <span class="citation">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#ref-wickham2023r">2023</a>)</span></p>
+<p>En este caso llamamos al proyecto <code>r4ds</code>. Una vez que completo este proceso, tendremos un nuevo proyecto de <code>RStudio</code> solo para este proyecto. Podemos verificar que el “inicio” de tu proyecto sea el directorio de trabajo actual:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb6-1" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb6-2"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb6-2" tabindex="-1"></a><span class="co">#&gt; [1] /Usuarios/Ignacio/Documents/r4ds</span></span></code></pre></div>
+<p>Mas aún la carpeta asociada con tu proyecto observaremos el archivo <code>.Rproj</code>. Haciendo doble clic en ese archivo para reabrir el proyecto. Nota que vuelves a donde lo dejaste: es el mismo directorio de trabajo e historial de comandos, y todos los archivos en los que estabas trabajando siguen abiertos. Porque seguiste nuestras instrucciones anteriores, tendrás, sin embargo, un entorno completamente fresco, garantizando que comienzas con una pizarra limpia.</p>
+<p>Una vez que estés dentro de un proyecto, deberías usar siempre rutas relativas y no rutas absolutas. ¿Cuál es la diferencia? Una ruta relativa es relativa al directorio de trabajo, es decir, al directorio del proyecto. Las rutas absolutas apuntan al mismo lugar independientemente de tu directorio de trabajo. Se ven un poco diferentes dependiendo de tu sistema operativo. En Windows comienzan con una letra de unidad (por ejemplo, <code>C:</code>) o dos barras invertidas (por ejemplo, <code>\\nombre_del_servidor</code>) y en Mac/Linux comienzan con una barra “/” (por ejemplo, <code>/usuarios/ignacio</code>). Nunca deberías usar rutas absolutas en tus scripts, porque dificultan el compartir: nadie más tendrá exactamente la misma configuración de directorio que tú.</p>
+<p>Hay otra diferencia importante entre los sistemas operativos: cómo separas los componentes de la ruta. Mac y Linux usan barras inclinadas (por ejemplo, <code>data/geiser.csv</code>) y Windows usa barras invertidas (por ejemplo, <code>data\geiser.csv</code>). R puede trabajar con cualquiera de los dos tipos (sin importar en qué plataforma estés usando), pero desafortunadamente, las barras invertidas tienen un significado especial para R, y para obtener una sola barra invertida en la ruta, necesitas escribir dos barras invertidas. ¡Eso hace que la vida sea frustrante, por lo que recomendamos siempre usar el estilo de Linux/Mac con barras inclinadas hacia adelante.</p>
+</div>
+<div id="rutas-de-archivos-y-el-paquete-here" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Rutas de Archivos y el Paquete {here}<a href="reproducibilidad-y-estructura-de-proyectos.html#rutas-de-archivos-y-el-paquete-here" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una de las grandes frustraciones al compartir un proyecto de <code>RStudio</code> con un colaborador es que es común referirse a archivos con <code>rutas de archivos absolutas</code> que son específicas de tu computadora.</p>
+<p>Desafortunadamente, los archivos inevitablemente no estarán en el mismo lugar en la computadora de tu colaborador, y todas las referencias de ruta para cargar o escribir/guardar archivos no funcionarán.</p>
+<p>Esta frustración ha llevado a personas razonables a amenazar con incendiar la computadora y a proponer mejores enfoques.</p>
+<div id="fig:arson" class="section level5 unnumbered">
+<h5 class="unnumbered"></h5>
+<p><img src="figs/computer-arson.png" />
+<em>Nota: Esta figura fue tomada de</em> <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">Bryan 2017</a></p>
+<p>Para tener un conjunto de rutas de archivos que funcionen en <strong>cualquier</strong> computadora que tenga una copia de tu Proyecto, necesitas usar el paquete {here}. Para instalarlo y ejecutarlo podemos hacer,</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb7-1" tabindex="-1"></a> <span class="fu">install.packages</span>(<span class="st">&quot;here&quot;</span>)</span>
+<span id="cb7-2"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb7-3"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb7-3" tabindex="-1"></a><span class="fu">here</span>()</span>
+<span id="cb7-4"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb7-4" tabindex="-1"></a><span class="co">#&gt; [1] /Usuarios/Ignacio/Documents/r4ds</span></span></code></pre></div>
+<p>Cuando ejecutamos la función <code>here()</code> esto nos devolverá la ruta a tu Proyecto actual. Esencialmente, determina dónde está el directorio de tu proyecto y proporciona esto como una base. Esto se puede usar para referenciar otras carpetas en tu proyecto de manera relativa. La función <code>here()</code> proporciona los detalles de la ruta del archivo hasta la carpeta de tu Proyecto de RStudio, y luego puedes agregar cualquier subcarpeta o detalles del nombre del archivo dentro de los paréntesis.</p>
+<p>Ahora, cuando compartas el Proyecto con un colaborador, las rutas de archivo para leer y escribir archivos funcionarán correctamente.</p>
+</div>
+</div>
+</div>
+<div id="nombrar-archivos" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Nombrar archivos<a href="reproducibilidad-y-estructura-de-proyectos.html#nombrar-archivos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cómo nombras archivos y directorios puede no parecer un punto importante, pero puede causar un gran dolor de cabeza si intentas usar código para automatizar procesos, y en el mejor de los casos, solo ralentiza las cosas. Hay una ciencia para elegir buenos nombres de archivos también.</p>
+<p>En general, es útil nombrar los archivos de código con un título corto y útil que describa su función, junto con un número al principio, para que el orden de ejecución de los archivos de código sea claro, como:</p>
+<pre><code>01-importar-limpiar_datos_redcap.R
+02-importar-limpiar_datos_almacen.R
+03-unir_datos_redcap_almacen.R</code></pre>
+<p>Estos se ordenarán y organizarán fácilmente en tu carpeta, ya que los números al principio ayudan a organizarlos.</p>
+<p>También es útil numerar y nombrar claramente tus archivos de datos. Estos generalmente deben corresponder a los archivos de código que los crearon. Al final de un paso de código, puedes guardar/escribir tu archivo de datos resultante en un archivo <code>*.rda</code> o un archivo <code>*.csv</code>, para ser cargado al inicio del siguiente archivo de código. Estos podrían verse así:</p>
+<pre><code>01-datos_limpios_redcap.csv
+02-datos_limpios_almacen.csv
+03-datos_unidos_redcap_almacen.csv</code></pre>
+<p>Observa que estamos utilizando un esquema de nombres ‘segmentados’, de modo que los archivos tienen un patrón de nombres consistente con segmentos en el mismo orden, y los segmentos distintos están separados por guiones bajos, mientras que los segmentos informativos compuestos por más de una palabra están separados por guiones.</p>
+<p>Es sorprendentemente importante ser reflexible sobre tu esquema de nombres segmentados desde el principio, ya que puede ayudarte de muchas maneras a organizar, ordenar y manipular archivos más adelante.</p>
+<p>Puede ser tentador nombrar tus archivos <code>code.R</code> o <code>myscript.R</code>, pero deberías pensar un poco más antes de elegir un nombre para tu archivo. Tres principios importantes para nombrar archivos son los siguientes:</p>
+<div style="border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
+<ul>
+<li>Debe ser legible por máquinas</li>
+<li>Debe ser legible por humanos</li>
+<li>Debe ordenarse bien en un directorio</li>
+</ul>
+</div>
+<p>Buenos nombres de archivos son legibles por computadoras, legibles por humanos y funcionan bien con el orden predeterminado. Desglosamos estos tres criterios uno por uno.</p>
+<div id="nombres-de-archivos-legibles-por-computadora" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Nombres de archivos legibles por computadora<a href="reproducibilidad-y-estructura-de-proyectos.html#nombres-de-archivos-legibles-por-computadora" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>¿Qué hace que un nombre de archivo sea legible por computadora? Primero, los archivos legibles por computadora no contienen espacios, puntuación ni caracteres especiales. Recuerda estas sabias palabras de Aaron Quinlan, un bioinformático, <a href="https://x.com/aaronquinlan/status/711593127551733761">“un espacio en un nombre de archivo es un espacio en el alma de uno”</a>. Son consistentes en el uso de mayúsculas, lo que significa que siempre sigues el mismo patrón de mayúsculas, ya sea todo en minúsculas, camel case (<code>EstoEsLoQueQuieroDecirPorCamelCase</code>) o cualquier otro. Finalmente, los buenos nombres de archivos hacen un uso deliberado de delimitadores de texto. El uso prudente de delimitadores facilita la búsqueda de patrones cuando buscas un archivo específico. Generalmente, se recomienda usar un guion bajo (<code>_</code>) para delimitar unidades de metadatos y un guion (-) para delimitar palabras dentro de una unidad de metadatos. Por ejemplo, aquí hay un buen nombre de archivo legible por computadora:</p>
+<pre><code>2024-06-17_ciencia-abierta_clase-01.pptx</code></pre>
+</div>
+<div id="nombres-de-archivos-legibles-por-humanos" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Nombres de archivos legibles por humanos<a href="reproducibilidad-y-estructura-de-proyectos.html#nombres-de-archivos-legibles-por-humanos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El nombre de archivo de ejemplo anterior no solo es legible por computadora, también es legible por humanos. Esto significa que un humano puede leer el nombre del archivo y tener una idea bastante buena de lo que hay en ese archivo. ¡Los buenos nombres de archivos son informativos! No debes tener miedo de usar nombres largos si eso es lo que se necesita para hacerlos descriptivos.</p>
+</div>
+<div id="nombres-de-archivos-que-funcionan-bien-con-el-orden-predeterminado" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Nombres de archivos que funcionan bien con el orden predeterminado<a href="reproducibilidad-y-estructura-de-proyectos.html#nombres-de-archivos-que-funcionan-bien-con-el-orden-predeterminado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si ordenas tus archivos alfabéticamente en una carpeta, quieres que se ordenen de una manera que tenga sentido. Ya sea que ordenes tus archivos por fecha o por un número secuencial, el número siempre va primero. Para las fechas, usa el formato AAAAMMDD, o tus archivos creados en abril de 1984 y 2020 estarán más cerca que los creados en marzo y abril de 2020. Si estás utilizando una numeración secuencial, agrega una cantidad sensata de ceros al frente según la cantidad de archivos de esa categoría que esperas tener en el futuro.</p>
+</div>
+</div>
+<div id="buenas-prácticas-para-escribir-código" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Buenas prácticas para escribir código<a href="#buenas-pr%C3%A1cticas-para-escribir-c%C3%B3digo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cada pieza de código que escribes tiene múltiples audiencias. La audiencia más importante es la computadora: si el código no entrega instrucciones inequívocas y correctas, el resultado no será el que pretendes.</p>
+<p>Pero el código también tiene otras audiencias. En algún momento, tú, tu coautor, tu asistente de investigación o alguien que desee reproducir tus hallazgos necesitará mirar el código para entenderlo o modificarlo.</p>
+<p>Un buen código se escribe teniendo en cuenta a todas estas audiencias. A continuación, recopilamos algunos de los principios más importantes que hemos aprendido sobre cómo escribir buen código.</p>
+<div id="mantén-el-código-modular" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Mantén el código modular<a href="#mant%C3%A9n-el-c%C3%B3digo-modular" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para garantizar la reproducibilidad en proyectos, es generalmente más efectivo utilizar múltiples archivos, cada uno encargado de una tarea específica. Esta estrategia ofrece varias ventajas importantes:</p>
+<ol style="list-style-type: decimal">
+<li><p>Dividir el proyecto en múltiples scripts que realicen tareas específicas facilita la comprensión, el mantenimiento y la actualización del código. Cada <code>script</code> puede enfocarse en una parte del flujo de trabajo. Esto permite modificar o actualizar una parte del proyecto sin afectar a las demá.</p></li>
+<li><p>Con scripts modulares, es más fácil reutilizar código en diferentes proyectos o en diferentes etapas del mismo proyecto. Por ejemplo, un script que contiene una funcion puede ser reutilizado en múltiples partes del análisis】.</p></li>
+<li><p>En un entorno de trabajo colaborativo, tener scripts separados permite que diferentes miembros del equipo trabajen en diferentes partes del proyecto simultáneamente. Esto reduce los conflictos de código y facilita la integración de los cambios a través de sistemas de control de versiones como Git</p></li>
+<li><p>Es más sencillo depurar y probar scripts individuales que un único archivo monolítico. Puedes desarrollar pruebas unitarias para cada script, asegurándote de que cada parte del proceso funciona correctamente antes de integrar todo el flujo de trabajo.</p></li>
+</ol>
+<p>Por tanto, dividir un proyecto en múltiples archivos específicos para cada tarea no solo mejora la organización y mantenibilidad del código, sino que también facilita la colaboración y asegura una mejor reproducibilidad de los resultados.</p>
+</div>
+<div id="mantén-el-código-corto-y-con-propósito" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Mantén el código corto y con propósito<a href="#mant%C3%A9n-el-c%C3%B3digo-corto-y-con-prop%C3%B3sito" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ninguna línea de código debería tener más de 100 caracteres. Los scripts largos deben dividirse en funciones más pequeñas. Las funciones individuales no deberían tener normalmente más de 80 líneas. Los <code>scripts</code> no deberían ser más largos que unos pocos cientos de líneas. Si te resulta difícil hacer que un <code>script</code> largo sea corto y con propósito, es una señal de que necesitas reflexionar sobre la estructura lógica del directorio en su conjunto. Cada <code>script</code> y función debería tener un propósito claro e intuitivo. Parte el código y recuerda mantenerlo modular</p>
+</div>
+<div id="haz-que-tus-funciones-sean-tímidas" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Haz que tus funciones sean tímidas<a href="#haz-que-tus-funciones-sean-t%C3%ADmidas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Muy relacionado con los dos puntos anteriores, es importante que las funciones sean timidas. Este principio muy utilizado en programación, (<em>Make your functions shy</em>) se refiere a que las funciones, y los <code>scripts</code>, deben ser pequeñas, específicas y limitadas en su alcance.</p>
+<p>El lector debe saber exactamente qué variables usa una función como entradas y qué variables puede potencialmente cambiar. La mayoría de las funciones deberían declarar explícitamente sus entradas y salidas y solo operar con variables locales. Es importante, que el conjunto de entradas y salidas sea lo más pequeño posible; las funciones deberían ser reacias a tocar más datos de los necesarios. Por ejemplo, si una función solo depende del parámetro beta, pásale solo beta y no todo el vector de parámetros. Usa variables globales raramente, si es que alguna vez lo haces.</p>
+<p>Esto es porque las funciones “tímidas” deben ocultar su complejidad interna y solo exponer lo necesario para su uso. Esto significa que deben tener una interfaz clara y sencilla, sin revelar detalles internos de su implementación.</p>
+<p>Además funciones pequeñas y específicas son más fáciles de reutilizar en diferentes partes del código y más fáciles de mantener y probar. Si una función es demasiado grande o hace demasiadas cosas, se vuelve más difícil de entender, depurar y modificar sin introducir errores. Al mismo tiempo.; as funciones “tímidas” tienden a depender menos de su contexto exterior, lo que significa que tienen menos efectos secundarios y son más predecibles. Esto facilita poder hacer pruebas y reduce la posibilidad de errores debido a cambios en otras partes del código.</p>
+</div>
+<div id="ordena-tus-funciones-para-una-lectura-lineal" class="section level3 hasAnchor" number="2.5.4">
+<h3><span class="header-section-number">2.5.4</span> Ordena tus funciones para una lectura lineal<a href="reproducibilidad-y-estructura-de-proyectos.html#ordena-tus-funciones-para-una-lectura-lineal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un lector debería poder leer tu código de arriba hacia abajo sin tener que saltar de un lado a otro. Las subfunciones deben aparecer inmediatamente después de las funciones de nivel superior que las llaman.</p>
+</div>
+<div id="usa-nombres-descriptivos" class="section level3 hasAnchor" number="2.5.5">
+<h3><span class="header-section-number">2.5.5</span> Usa nombres descriptivos<a href="reproducibilidad-y-estructura-de-proyectos.html#usa-nombres-descriptivos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los buenos nombres reemplazan los comentarios y hacen que el código se auto-documente. Por defecto, los nombres de variables, funciones, archivos, etc. deben consistir en palabras completas. Usa abreviaturas solo cuando estés seguro de que un lector no familiarizado con tu código las entendería y no haya ambigüedad. La mayoría de los economistas entendería que “income_percap” significa ingreso per cápita, por lo que no es necesario escribir income_percapita. Pero income_pc podría significar muchas cosas diferentes dependiendo del contexto. Abreviaturas como <code>st</code>, <code>cnty</code> y <code>hhld</code> están bien si se usan de manera consistente en todo el cuerpo del código. Pero usar <code>blk_income</code> para representar el ingreso en un bloque censal podría ser confuso.</p>
+<p>Evita tener múltiples objetos cuyos nombres no dejen claro cómo son diferentes: por ejemplo, scripts llamados <code>state_level_analysis.do</code> y <code>state_level_analysisb.do</code> o variables llamadas <code>x</code> y <code>xx</code>.</p>
+<p>Los nombres pueden ser más cortos o más abreviados cuando los objetos que representan se usan frecuentemente y/o muy cerca de donde se definen. Por ejemplo, a veces es útil definir nombres cortos para usar en cálculos algebraicos. Esto es difícil de leer:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb11-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb11-1" tabindex="-1"></a>log_coefficient = <span class="fu">log</span>((income_percap&#39; * income_percap)^(-1) *<span class="co">///</span></span></code></pre></div>
+<p>Esto es mejor:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb12-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb12-1" tabindex="-1"></a>X = income_percap</span>
+<span id="cb12-2"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb12-2" tabindex="-1"></a>Y = log_wage</span>
+<span id="cb12-3"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb12-3" tabindex="-1"></a>log_coefficient = <span class="fu">log</span>((X&#39;*X)^(-1)*X&#39;*Y)</span></code></pre></div>
+</div>
+<div id="sé-consistente" class="section level3 hasAnchor" number="2.5.6">
+<h3><span class="header-section-number">2.5.6</span> Sé consistente<a href="#s%C3%A9-consistente" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hay muchos puntos de estilo de codificación que son en su mayoría una cuestión de gusto. Por ejemplo, a veces la gente escribe nombres de variables como hhld_annual_income y otras veces como hhldAnnualIncome. Aunque algunas personas tienen opiniones fuertes sobre cuál es mejor, no nos importa. Lo importante es que todos en un equipo usen convenciones consistentes. Esto es especialmente importante dentro de los scripts: si estás editando un programa en el que todos los scripts usan indentación de dos espacios, deberías usar también la indentación de dos espacios, incluso si eso rompe la regla normal. (O, deberías usar grep para actualizar el script a la indentación de cuatro espacios).</p>
+</div>
+<div id="comenta-el-código" class="section level3 hasAnchor" number="2.5.7">
+<h3><span class="header-section-number">2.5.7</span> Comenta el código<a href="#comenta-el-c%C3%B3digo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Nunca puedes comentar demasiado tu código. Los comentarios deben realmente explicar lo que hace el código en lugar de simplemente transliterar—es más útil describir <code>x&lt;-1</code> con “inicializar el conteo de población a 1” que “establecer x igual a 1.” Los comentarios también deben ser revisados para asegurarse de que no transmitan información inexacta y no queden desactualizados.</p>
+</div>
+<div id="indenta-el-código" class="section level3 hasAnchor" number="2.5.8">
+<h3><span class="header-section-number">2.5.8</span> Indenta el código<a href="#indenta-el-c%C3%B3digo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La indentación del código es crucial en la programación por varias razones, independientemente del lenguaje de programación o entorno de desarrollo utilizado (Somos demasiado inteligentes para opinar sobre el debate de espacios vs. tabulaciones).</p>
+<p>La indentación adecuada hace que el código sea más fácil de leer y entender. Los desarrolladores pueden seguir la estructura lógica del código, lo que facilita la comprensión de su funcionamiento y la identificación de secciones específicas. Un código bien indentado reduce el esfuerzo necesario para revisar y mantener el código.</p>
+<p>La indentación ayuda a organizar el código en bloques lógicos, mostrando claramente dónde comienzan y terminan las estructuras de control como bucles, condiciones y funciones. Esto es especialmente útil en lenguajes donde la indentación es una parte sintáctica del lenguaje, como Python, pero también es beneficioso en otros lenguajes.</p>
+<p>Un código mal indentado puede llevar a errores difíciles de detectar. La estructura visual proporcionada por la indentación adecuada ayuda a evitar errores lógicos y de sintaxis, permitiendo a los desarrolladores ver más fácilmente las relaciones entre diferentes partes del código.</p>
+</div>
+<div id="no-dejes-desorden" class="section level3 hasAnchor" number="2.5.9">
+<h3><span class="header-section-number">2.5.9</span> No dejes desorden<a href="reproducibilidad-y-estructura-de-proyectos.html#no-dejes-desorden" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>No dejes desorden—elimina valores intermedios temporales o archivos necesarios. Mantener el código libre de valores y archivos temporales innecesarios mejora la legibilidad y la mantenibilidad. Un código desordenado con variables y archivos temporales puede confundir a otros investigadores o incluso al mismo autor al volver a revisar el código tiempo después. Usar prefijos como <code>temp_</code> o <code>x_</code> para identificar estos elementos o guardarlos en una carpeta dedicada ayuda a gestionarlos mejor y a eliminarlos cuando ya no son necesarios.</p>
+<p>No eliminar valores temporales o intermedios puede llevar a errores si se usan accidentalmente en lugar de las variables correctas. Eliminar estos valores una vez que han cumplido su propósito reduce el riesgo de errores lógicos y facilita la depuración del código</p>
+<p>En Stata, por ejemplo, se pueden utilizar las funcionalidades <code>tempfile</code> y <code>tempvar</code> para manejar archivos y variables temporales de manera eficiente. Estos comandos crean referencias temporales que son automáticamente eliminadas al final de la sesión o del script, ayudando a mantener el entorno de trabajo limpio y ordenado.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb13-1"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb13-1" tabindex="-1"></a><span class="kw">tempfile</span> tempdata</span>
+<span id="cb13-2"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb13-2" tabindex="-1"></a><span class="kw">save</span> <span class="ot">`tempdata&#39;</span>, <span class="kw">replace</span></span>
+<span id="cb13-3"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb13-4" tabindex="-1"></a><span class="kw">tempvar</span> tempvar1</span>
+<span id="cb13-5"><a href="reproducibilidad-y-estructura-de-proyectos.html#cb13-5" tabindex="-1"></a><span class="kw">gen</span> <span class="ot">`tempvar1&#39;</span> = var1 + var2</span></code></pre></div>
+</div>
+</div>
+<div id="gestión-de-paquetes-estadísticos" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Gestión de Paquetes Estadísticos<a href="#gesti%C3%B3n-de-paquetes-estad%C3%ADsticos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Es un error común suponer que los paquetes de software avanzados siempre producirán los mismos resultados exactos a través de diferentes versiones de software y plataformas. Sin embargo, a menudo esto no es así, especialmente con paquetes escritos por usuarios. (Para un ejemplo en economía que demuestra la importancia de este problema con la estimación numérica no lineal, ver <span class="citation">McCullough and Vinod (<a href="#ref-mccullough2003verifying">2003</a>)</span>).</p>
+<p>Como mínimo, los investigadores siempre deben incluir información sobre qué versión del software utilizaron para ejecutar sus programas. La información sobre la versión del software se puede determinar usando el comando <code>sessionInfo()</code> en <code>R</code>, y los usuarios de <code>Stata</code> deben incluir el comando <code>version</code> en <code>scripts</code> para asegurar que los usuarios con versiones más nuevas de <code>Stata</code> usen los mismos algoritmos. Desafortunadamente, esto todavía no es garantía, ya que los algoritmos desactualizados o incorrectos no se reproducen en versiones más nuevas de <code>Stata.</code> Los usuarios de Python pueden usar el comando <code>pip list</code> o <code>pip freeze</code> para listar las versiones de todos los paquetes instalados, y crear un archivo <code>requirements.txt</code> para documentar las dependencias del entorno. La información sobre el procesador de la computadora y el sistema operativo también debería idealmente ser incluida, ya que estos pueden producir respuestas diferentes.</p>
+<p>Como mínimo, los investigadores siempre deben incluir información sobre qué versión del software utilizaron para ejecutar sus programas. La información sobre la versión del software se puede determinar usando el comando <code>sessionInfo()</code> en R, y los usuarios de Stata deben incluir el comando <code>version</code> en scripts para asegurar que los usuarios con versiones más nuevas de Stata usen los mismos algoritmos. Desafortunadamente, esto todavía no es garantía, ya que los algoritmos desactualizados o incorrectos no se reproducen en versiones más nuevas de Stata. La información sobre el procesador de la computadora y el sistema operativo también debería idealmente ser incluida, ya que estos pueden producir respuestas diferentes.</p>
+<p>Los usuarios de <code>R</code> pueden usar el comando <code>packageVersion()</code> para verificar las versiones de los paquetes, y pueden ejecutar versiones antiguas de paquetes archivadas en CRAN. Dado que R (y otros lenguajes de código abierto) requieren numerosos paquetes, registrar manualmente los paquetes no es recomendable. Para garantizar la reproducibilidad, los usuarios pueden utilizar el paquete <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a>, que permite gestionar entornos de proyectos y restaurar las versiones de los paquetes a un punto específico en el tiempo. Al usar <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a>, se crea un archivo <code>renv.lock</code> que registra las versiones exactas de los paquetes utilizados en el proyecto. Esto asegura que, al compartir el proyecto, otros usuarios puedan reproducir el entorno exacto y las versiones de los paquetes tal como existían en la fecha en que se escribió el código.</p>
+<p>Los usuarios de <code>Stata</code> pueden usar el comando <code>viewsource</code> para ver el código fuente de cualquier archivo <code>.ado</code> que utilicen. StataCorp implementa un sistema de control de versiones integrado que permite que los scripts y programas escritos en versiones antiguas continúen funcionando en versiones modernas del software. Esto significa que los investigadores pueden escribir un script y estar seguros de que se ejecutará correctamente en el futuro, independientemente de las actualizaciones del software. Para garantizar la reproducibilidad, es recomendable incluir el comando <code>version</code> al inicio de los scripts, especificando la versión de <code>Stata</code> en la que se escribió el código. Esto asegura que los comandos se ejecuten con los algoritmos de la versión especificada, preservando así la integridad de los resultados originales.</p>
+<p>Los usuarios de <code>Python</code> pueden crear entornos virtuales utilizando herramientas como <code>venv</code> o <code>virtualenv</code> para asegurar que las versiones de los paquetes y del propio <code>Python</code> sean consistentes con las usadas originalmente. Además, herramientas como <code>pip freeze</code> permiten generar un archivo <code>requirements.txt</code> que lista todas las versiones de los paquetes utilizados, lo cual facilita la recreación del entorno original en otro sistema. Otra opción es usar <code>conda</code>, que no solo maneja paquetes de <code>Python</code> sino también otras dependencias del sistema, proporcionando un entorno reproducible más robusto.</p>
+<div id="palabras-finales" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Palabras finales<a href="reproducibilidad-y-estructura-de-proyectos.html#palabras-finales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El movimiento hacia el software de código abierto como <code>R</code> y <code>Python</code> ha revolucionado el mundo de la programación. Estos lenguajes no solo son accesibles para todos, sino que también cuentan con comunidades dinámicas que impulsan su evolución constante.</p>
+<p>En este capítulo, exploramos la importancia de la reproducibilidad en la investigación y cómo un flujo de trabajo bien estructurado puede facilitar este objetivo. Discutimos herramientas y prácticas esenciales, como el uso de scripts automatizados, la creación de estructuras de proyectos organizadas y la gestión cuidadosa de las dependencias de software. Hemos destacado cómo herramientas específicas en <code>R</code>, <code>Python</code> y <code>Stata</code> pueden ayudar a mantener la consistencia y la reproducibilidad de los resultados, proporcionando ejemplos claros y prácticos.</p>
+<p>Sin embargo, entendemos que muchas disciplinas han usado durante mucho tiempo software propietario como SAS, SPSS y Stata. Aprender un nuevo lenguaje puede parecer una carga adicional para los investigadores. En este capítulo, ofrecimos sugerencias prácticas lo mas generales posibles, pero hicimos muchas referencias a comandos específicos tanto para R como para Stata, esperando agregar mas en el futuro, asegurando que sean útiles para el mayor número de investigadores.</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div class="csl-entry">
+Arnold, Becky, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, Anna Krystalli, Alexander Morley, Martin O’Reilly, Kirstie Whitaker, et al. 2019. <span>“The Turing Way: A Handbook for Reproducible Data Science.”</span> <em>Zenodo</em>.
+</div>
+<div class="csl-entry">
+Gentzkow, Matthew, and Jesse M Shapiro. 2014. <span>“Code and Data for the Social Sciences: A Practitioner’s Guide.”</span> <em>Chicago, IL: University of Chicago</em>, 51.
+</div>
+<div class="csl-entry">
+McCullough, Bruce D, and Hrishikesh D Vinod. 2003. <span>“Verifying the Solution from a Nonlinear Solver: A Case Study.”</span> <em>American Economic Review</em> 93 (3): 873–92.
+</div>
+<div class="csl-entry">
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <em>R for Data Science</em>. " O’Reilly Media, Inc.".
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-TheTuringWay" class="csl-entry">
+Arnold, Becky, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, Anna Krystalli, Alexander Morley, Martin O’Reilly, Kirstie Whitaker, et al. 2019. <span>“The Turing Way: A Handbook for Reproducible Data Science.”</span> <em>Zenodo</em>.
+</div>
+<div id="ref-gentzkow2014code" class="csl-entry">
+Gentzkow, Matthew, and Jesse M Shapiro. 2014. <span>“Code and Data for the Social Sciences: A Practitioner’s Guide.”</span> <em>Chicago, IL: University of Chicago</em>, 51.
+</div>
+<div id="ref-mccullough2003verifying" class="csl-entry">
+McCullough, Bruce D, and Hrishikesh D Vinod. 2003. <span>“Verifying the Solution from a Nonlinear Solver: A Case Study.”</span> <em>American Economic Review</em> 93 (3): 873–92.
+</div>
+<div id="ref-wickham2023r" class="csl-entry">
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <em>R for Data Science</em>. " O’Reilly Media, Inc.".
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

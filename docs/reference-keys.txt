@@ -24,3 +24,4 @@ indenta-el-código
 no-dejes-desorden
 gestión-de-paquetes-estadísticos
 palabras-finales
+fig:fig-new-project
