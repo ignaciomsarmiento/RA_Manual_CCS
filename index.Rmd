@@ -1,0 +1,27 @@
+--- 
+title: "Colombia Country Study - RA Manual"
+author: "Ignacio Sarmiento Barbieri "
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+url: https://ignaciomsarmiento.github.io/RA_Manual_CCS
+description: |
+  Este será el manual guía de programación para el Country Study de Colombia
+link-citations: yes
+github-repo: ignaciomsarmiento/RA_Manual_CCS/
+---
+
+# Prefacio
+
+
+La ciencia social debe ser accesible para una amplia interpretación crítica y contribución, promoviendo sociedades abiertas. Este libro complementa al  taller "Haciendo Ciencia Abierta" que tiene como objetivo fortalecer las prácticas de investigación dentro de la comunidad hispanohablante. Sirve como un acompañamiento, proporcionando una guía detallada y recursos adicionales para los participantes.
+
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
